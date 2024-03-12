@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import WebDesgin from "./WebDesgin";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import Development from "./Development";
 import ProductDesign from "./ProductDesign";
+// gsap.registerPlugin(ScrollTrigger);
+
 const data = [
   "Web Design",
   "Development",
@@ -11,10 +15,7 @@ const data = [
   "Social Media",
 ];
 const Section = styled.div`
-  height: 100vh;
   scroll-snap-align: center;
-  display: flex;
-  justify-content: center;
   position: relative;
   color: black;
   font-size: 14px;
@@ -22,7 +23,6 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  width: 1400px;
   display: flex;
   justify-content: space-between;
 
@@ -47,11 +47,11 @@ const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 `;
 
 const ListItem = styled.li`
-  font-size: 90px;
+  font-size: 60px;
   font-weight: bold;
   cursor: pointer;
   color: transparent;
@@ -90,14 +90,43 @@ const Right = styled.div`
 flex: 1;
 position: relative;
 `;
-const Works = () => {
+gsap.registerPlugin(ScrollTrigger);
+const NewWorks = () => {
   const [work, setWork] = useState("Web Design");
-  console.log(work);
+  const tl = gsap.timeline({
+    scrollTrigger: {
+       trigger: ".service-container",
+       start: "+=300",
+       end: "bottom",
+     },
+  });
+  
+  useEffect(()=>{
+
+   tl.from(".service-animation",{
+    opacity: 0,
+    y:100,
+    duration:1.8,
+    stagger: 0.1
+})
+  tl.from(".service-animation li" ,{
+    opacity : 0,
+    y:100 ,
+    duration: 1.3,
+    stagger: 0.2,
+  }, "-=1")
+  })
+  
   return (
-    <Section>
-      <Container>
+    <div className="bg-[#080017] px-[4%] service-container">
+    <Section className="flex flex-col max-w-[1440px] m-auto py-8 md:py-[4.7rem] "> 
+      <div className="text-center ">
+          <h1 className="text-white  text-3xl md:text-5xl pb-2 md:pb-5 font-medium service-animation">Our <span className="span-color-text">Core</span> Services</h1>
+          <p className="text-white text-[1rem] md:text-xl font-bold service-animation">Transforming Your Business through Intelligent Design and Seamless Tech Solutions.</p>
+          </div>
+      <Container className="md:pt-10">
         <Left>
-          <List>
+          <List className="service-animation">
             {data.map((item) => (
               <ListItem key={item} text={item} onClick={()=>setWork(item)}>
                 {item}
@@ -106,17 +135,18 @@ const Works = () => {
           </List>
         </Left>
         <Right>
-          {/* {work === "Web Design" ? (
+          {work === "Web Design" ? (
             <WebDesgin />
           ) : work === "Development" ? (
             <Development />
           ) : (
             <ProductDesign />
-          )} */}
+          )}
         </Right>
       </Container>
-    </Section>
+  
+    </Section>  </div>
   );
 };
 
-export default Works;
+export default NewWorks;

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from "styled-components";
-
+import LogoImg  from "../asest/newlogo.png";
+import SearchImg  from "../asest/search.png";
 const Section = styled.div`
 display: flex;
 justify-content: center;
@@ -11,7 +12,7 @@ justify-content: center;
 `;
 
 const Container = styled.div`
-width: 1400px;
+width: 1440px;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -23,11 +24,10 @@ padding: 10px 0px;
   }`;
 
 const Link = styled.div`
-display: flex;
 align-items: center;
 gap: 50px;`;
 const Logo = styled.img`
-height: 50px;`;
+height: 68px;`;
 const Icons = styled.div`  display: flex;
 align-items: center;
 gap: 20px;`;
@@ -37,8 +37,9 @@ width: 20px;
 const List = styled.ul`  display: flex;
 list-style-type: none;
 align-items: center;
-gap: 20px;`;
+gap: 30px;`;
 const ListItem = styled.li`
+font-weight: 600;
 cursor: pointer;`;
 const Button = styled.button` width: 100px;
 padding: 10px;
@@ -48,22 +49,35 @@ border: none;
 border-radius: 5px;
 cursor: pointer;`;
 
-
-const  Navbar=()=>{
+const navItems = [
+  {name:  "Services"} , {name:  "Portfolio"},
+  {name:  "About us"},
+  {name:  "Our Approach"},
+  {name:  "Contact"}, {name:  "Case Study"}
+]
+const  Navbar=({timeline})=>{
+  useEffect(()=>{
+    timeline.from(".nav-animation", {
+    opacity: 0,
+    y:20,
+    stagger: 0.2
+  })
+  }, [])
+  
   return (
-    <Section>
+    <Section className='pt-6 overflow-hidden'>
       <Container>
-        <Link>
-            <Logo src="../../public/img/logo.png"alt='..'/>
+        <Logo src={LogoImg} alt='..' className='nav-animation'/>
+        <Link className='hidden md:flex nav-animation'>
             <List>
-                <ListItem>Home</ListItem>
-                <ListItem>Studio</ListItem>
-                <ListItem>Works</ListItem>
-                <ListItem>Contact</ListItem>
+              {navItems.map((item  , index )=>(
+                <ListItem  className='nav-animation' key={index}>{item.name}</ListItem>
+              ))}
+                
             </List>
         </Link>
-        <Icons>
-            <Icon src="../../public/img/search.png"/>
+        <Icons className='nav-animation'>
+            <Icon src={SearchImg}/>
             <Button>Hire Now</Button>
         </Icons>
       </Container>

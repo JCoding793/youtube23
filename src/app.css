@@ -1,0 +1,17 @@
+@import url("./moderfont.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+  }
+
+.span-color-text{
+  background: linear-gradient(to top,#FFFFFF,#A13EFB);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}

@@ -34,7 +34,7 @@ const WebDesgin= ()=>{
       <OrbitControls enableZoom={false} autoRotate/>
       </Suspense>
     </Canvas>
-    <Desc>We desgin products with a strong focus on both world class design and ensuring you product is a market success </Desc> 
+    {/* <Desc>We desgin products with a strong focus on both world class design and ensuring you product is a market success </Desc>  */}
     </>
    
   )

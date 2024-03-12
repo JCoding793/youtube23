@@ -1,6 +1,10 @@
 import styled from "styled-components";
-import React, { Suspense} from "react";
+import gsap from "gsap";
+import React, { Suspense, useEffect} from "react";
 import Navbar from "./Navbar";
+import bgImg from "../asest/modenbg.png";
+import bgnewImg from "../asest/newhome.png";
+
 import { Canvas } from "@react-three/fiber";
 import MoonImg  from "../asest/moon.png";
 import LineImg  from "../asest/line.png";
@@ -20,8 +24,8 @@ const Section = styled.div`
 
 const Container = styled.div`
   height: 100%;
-  scroll-snap-align: center;
-  width: 1400px;
+  width: 1440px;
+  
   display: flex;
   justify-content: space-between;
 
@@ -34,11 +38,11 @@ const Container = styled.div`
 `;
 
 const Left = styled.div`
-  flex: 2;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+//   gap: 20px;
 
   @media only screen and (max-width: 768px) {
     flex: 1;
@@ -81,8 +85,8 @@ const Button = styled.button`
   background-color: #da4ea2;
   color: white;
   font-weight: 500;
-  width: 100px;
-  padding: 10px;
+  width: fit-content;
+  padding:15px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -98,14 +102,11 @@ const Right = styled.div`
 `;
 
 const Img = styled.img`
-  width: 800px;
-  height: 600px;
+  width: 450px;
+  height: 450px;
   object-fit: contain;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: 0px;
   margin: auto;
   animation: animate 2s infinite ease alternate;
 
@@ -120,25 +121,35 @@ const Img = styled.img`
     }
   }
 `;
-function Hero() {
+function NewHero() {
+    const tl = gsap.timeline();
+    useEffect(()=>{
+        tl.from(".banner-animation", {
+            opacity: 0,
+            y:30,
+            stagger: 0.2
+          })
+    }, [])
   return (
-    <Section>
-      <Navbar />
+    <Section className=" bg-center bg-contain" style={{backgroundImage: `linear-gradient(rgba(51, 17, 86, 0.8), rgba(51, 17, 86, 0.8)), url(${bgImg})`}}>
+    
+      <Navbar timeline={tl}/>
       <Container>
         <Left>
-          <Title>Elevate Your Brand: Invent</Title>
-          <Title>Transforming Visions into Reality!</Title>
+            <div className="text-center md:text-left overflow-hidden"></div>
+          <h1 className="text-3xl md:text-5xl text-white pb-3 banner-animation">Elevate Your Brand: <span className=" span-color-text">Invent</span></h1>
+          <h1 className="text-3xl md:text-5xl text-white pb-3 banner-animation">Transforming Visions into Reality!</h1>
           {/* <WhatWeDo>
             <Line src={LineImg} />
             <Subtitle>What We Do</Subtitle>
           </WhatWeDo> */}
-          <Desc>
+          <p className="w-2/3 pt-7 pb-10 text-[0.9rem] md:text-xl banner-animation">
           We take pleasure in crafting delightful, human-centered digital experiences.
-          </Desc>
-          <Button>Learn More</Button>
+          </p>
+          <Button className="banner-animation">Learn More</Button>
         </Left>
         <Right>
-        {/* <Canvas>
+        <Canvas>
             <Suspense fallback={null}>
               <OrbitControls enableZoom={false} />
               <ambientLight intensity={1} />
@@ -152,12 +163,12 @@ function Hero() {
                 />
               </Sphere>
             </Suspense>
-          </Canvas> */}
-          <Img src={MoonImg} />
+          </Canvas>
+          <Img src={bgnewImg} />
         </Right>
       </Container>
     </Section>
   );
 }
 
-export default Hero;
+export default NewHero;

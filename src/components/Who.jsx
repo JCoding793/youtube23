@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { Cube } from "./Cube";
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, } from '@react-three/drei';
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+// import MoonImg  from "../asest/moon.png";
+import LineImg from "../asest/line.png";
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
@@ -76,33 +78,33 @@ const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `;
-const Who = ()=>{
-
-    return (
-      <Section>
-
-        <Container>
+const Who = () => {
+  return (
+    <Section>
+      <Container>
         <Left>
-        <Canvas camera={{fov: 25 , position:[5,5,5]}}>
-          <OrbitControls enableZoom={false} autoRotate/>
-          <ambientLight intensity={1}/>
-          <directionalLight position={[3,2,1]} />
-         <Cube />
-        </Canvas>
-          </Left>
-          <Right>
-             <Title>Think outside the square space</Title>
-            <WhatWeDo>
-              <Line src="../../public/img/line.png"/>
-              <Subtitle>Who we Are </Subtitle>
-            </WhatWeDo>
-            <Desc>a creative group of designers and developers with a passion for the arts</Desc>
-            <Button>See our work</Button>
-          </Right>
-        </Container>
-     
-      </Section>
-    )
-  }
-  
-  export default Who;
+          <Canvas camera={{ fov: 25, position: [5, 5, 5] }}>
+            <OrbitControls enableZoom={false} autoRotate />
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 1]} />
+            <Cube />
+          </Canvas>
+        </Left>
+        <Right>
+          <Title>Think outside the square space</Title>
+          <WhatWeDo>
+            <Line src={LineImg} />
+            <Subtitle>Who we Are </Subtitle>
+          </WhatWeDo>
+          <Desc>
+            a creative group of designers and developers with a passion for the
+            arts
+          </Desc>
+          <Button>See our work</Button>
+        </Right>
+      </Container>
+    </Section>
+  );
+};
+
+export default Who;

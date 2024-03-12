@@ -27,8 +27,8 @@ const Development= ()=>{
       <Atom />
       <OrbitControls enableZoom={false} autoRotate/>
     </Canvas>
-    <Desc>
-      We desgin products with a strong focus on both world class design and ensuring you product is a market success </Desc>    
+    {/* <Desc>
+      We desgin products with a strong focus on both world class design and ensuring you product is a market success </Desc>     */}
     </>
 
   )
