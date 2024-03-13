@@ -2,18 +2,12 @@ import React, { useEffect } from 'react'
 import styled from "styled-components";
 import LogoImg  from "../asest/newlogo.png";
 import SearchImg  from "../asest/search.png";
-const Section = styled.div`
-display: flex;
-justify-content: center;
 
-@media only screen and (max-width: 768px) {
-  width: 100%;
-}
-`;
 
 const Container = styled.div`
-width: 1440px;
+
 display: flex;
+
 justify-content: space-between;
 align-items: center;
 padding: 10px 0px;
@@ -56,16 +50,16 @@ const navItems = [
   {name:  "Contact"}, {name:  "Case Study"}
 ]
 const  Navbar=({timeline})=>{
-  useEffect(()=>{
-    timeline.from(".nav-animation", {
-    opacity: 0,
-    y:20,
-    stagger: 0.2
-  })
-  }, [])
+  // useEffect(()=>{
+  //   timeline.from(".nav-animation", {
+  //   opacity: 0,
+  //   y:20,
+  //   stagger: 0.2
+  // })
+  // }, [])
   
   return (
-    <Section className='pt-6 overflow-hidden'>
+    <div className='pt-6 overflow-hidden'>
       <Container>
         <Logo src={LogoImg} alt='..' className='nav-animation'/>
         <Link className='hidden md:flex nav-animation'>
@@ -81,7 +75,7 @@ const  Navbar=({timeline})=>{
             <Button>Hire Now</Button>
         </Icons>
       </Container>
-    </Section>
+    </div>
   )
 }
 

@@ -97,6 +97,7 @@ const NewWorks = () => {
     scrollTrigger: {
        trigger: ".service-container",
        start: "+=300",
+      //  start: "top bottom",
        end: "bottom",
      },
   });

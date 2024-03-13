@@ -77,7 +77,7 @@ export default function ContactVersion1() {
             </div>
           </div>
         </div>
-        <div className="w:full first-letter:md:w-1/2 border border-slate-600 rounded-2xl py-8 px-5 md:py-16 md:px-10">
+        <div className="w-full first-letter:md:w-1/2 border border-slate-600 rounded-2xl py-8 px-5 md:py-16 md:px-10">
           <h1 className=" text-3xl md:text-5xl font-bold pb-2 contact-animation-right">Ready To Get Started?</h1>
           <p className="text-[0.8rem] md:text-[1rem] pb-4 contact-animation-right">
             Your email address will not be published, Required fields are marked{" "}

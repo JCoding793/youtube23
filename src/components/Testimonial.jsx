@@ -16,11 +16,11 @@ export default function TestimonialClient() {
    const vector10 = "";
   gsap.to("#myPath", {
     keyframes: {
-     "0%":  {  autoAlpha: true, attr: { d:vector6 },},
-     "15%": { autoAlpha: true, attr: { d:vector2 },}, 
-     "30%": { autoAlpha: true, attr: { d:vector9 },},
-     "45%": { autoAlpha: true, attr: { d:vector4 },},
-     "60%": { autoAlpha: true, attr: { d:vector3 },},
+    //  "0%":  {  autoAlpha: true, attr: { d:vector6 },},
+    //  "15%": { autoAlpha: true, attr: { d:vector2 },}, 
+     "0%": { autoAlpha: true, attr: { d:vector9 },},
+     "25%": { autoAlpha: true, attr: { d:vector4 },},
+     "50%": { autoAlpha: true, attr: { d:vector3 },},
      "75%": { autoAlpha: true, attr: { d:vector5 },},
      "100%": { autoAlpha: true, attr: { d:vector8 },},
     
@@ -30,32 +30,32 @@ export default function TestimonialClient() {
     yoyo: true,
 
     ease: "none", // ease the entire keyframe block
-    duration: 18,
+    duration: 8,
    })
          
   })
   
   return (
-    <div className="bg-[#080017] ">
+    <div className="bg-[#080017]">
       <div className="testimonial-container max-w-[1440px] m-auto text-center py-12">
-        <div >
+        <div>
           <h1 className="text-3xl md:text-5xl font-medium pb-6"><span className="span-color-text ">Testimonials</span></h1>
           <p className=" text-[1rem] md:text-2xl font-bold">Voices of Trust: What Our Clients Say</p>
         </div>
         <div className="py-20 ">
-          <div className="flex flex-col justify-center items-center relative w-[692px] m-auto">
+          <div className="flex flex-col justify-center items-center relative w-full md:w-[692px] m-auto">
           {/* width="800" height="416" */}
-            <svg  className="w-full h-full md:w-[670px] md:h-[429px]" viewBox="0 0 692 416" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg  className="w-[80%] md:w-[670px] md:h-[429px] " viewBox="0 0 692 416" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path id="myPath" d="M383.065 36.5071C241.952 73.543 233.003 -32.1084 109.085 10.1618C0.168027 47.3152 -11.0706 192.122 7.00256 253.73C73.1566 479.239 225.164 427.787 412.801 414.553C638.107 398.662 687.624 342.791 694.09 248.044C701.274 142.784 671.986 -39.3217 383.065 36.5071Z" fill="#F7FAFF"/>
          </svg>
-          <div className="flex flex-col gap-14 justify-between  items-center text-center absolute h-[416px] pb-14 px-12 testimonial-content">
-            <img src={Img} className=" h-28 w-28" alt=".. " />
+          <div className="flex flex-col  gap-6 md:gap-14 justify-between  items-center text-center absolute md:h-[416px] md:pb-14 md:px-12 testimonial-content">
+            <img src={Img} className="h-14 w-14 md:h-28 md:w-28" alt=".. " />
             <div>
-              <p className="text-black text-[0.9rem] md:text-[1rem]">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis, omnis repellendus cupiditate dolor recusandae voluptas velit doloremque vero, error, in voluptatem blanditiis et itaque tenetur consequatur dolores ducimus libero tempora quod! Maxime velit aperiam officiis?
+              <p className="text-black text-[0.7rem] md:text-[1rem] w-4/6 md:w-auto m-auto">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis, omnis repellendus cupiditate dolor recusandae voluptas velit doloremque vero, error, in voluptatem blanditiis et itaque tenetur consequatur dolores ducimus libero tempora quod?
             </p>
-            <h1 className="text-[#333CD8] font-semibold text-[0.9rem] md:text-xl ">Georgia Jones</h1>
-            <h4 className="text-[0.65rem] md:text-[0.9rem] text-[#FA9521]">UI/UX Desinger</h4>
+            <h1 className="text-[#333CD8] font-semibold text-[0.8rem] md:text-xl">Georgia Jones</h1>
+            <h4 className="text-[0.6rem] md:text-[0.9rem] text-[#FA9521]">UI/UX Desinger</h4>
             </div>    
           </div>
           </div>

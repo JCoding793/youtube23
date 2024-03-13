@@ -34,7 +34,7 @@ export default function Client() {
         {/* our Client Section  */}
       <div className='py-10 md:py-[4.7rem] max-w-[1440px] m-auto '>
         <h1 className=' text-3xl md:text-5xl text-center font-medium client-animation'>Our <span className="span-color-text">Clients</span></h1>
-        <div className=' flex  justify-center md:justify-between  flex-wrap md:flex-nowrap'>
+        <div className=' flex  justify-center md:justify-between  flex-wrap md:flex-nowrap overflow-hidden'>
             <img src={Client1}  className="client-cards  object-contain h-[60px] md:h-[100px] w-100px md:w-[150px]" alt="..n"/>
             <img src={Client2} className="client-cards object-contain  h-[60px] md:h-[100px] w-100px  md:w-[150px]" alt="..n"/>
             <img src={Client3} className="client-cards object-contain  h-[60px] md:h-[100px] w-100px  md:w-[150px]" alt="..n"/>

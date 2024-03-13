@@ -11,26 +11,17 @@ import LineImg  from "../asest/line.png";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 const Section = styled.div`
   height: 100vh;
-  scroll-snap-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-
   @media only screen and (max-width: 768px) {
     height: 200vh;
   }
 `;
 
 const Container = styled.div`
-  height: 100%;
-  width: 1440px;
+  height: calc(100vh - 112px);
   
-  display: flex;
-  justify-content: space-between;
-
   @media only screen and (max-width: 768px) {
     width: 100%;
+    height:1110px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -86,7 +77,6 @@ const Button = styled.button`
   color: white;
   font-weight: 500;
   width: fit-content;
-  padding:15px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -123,30 +113,30 @@ const Img = styled.img`
 `;
 function NewHero() {
     const tl = gsap.timeline();
-    useEffect(()=>{
-        tl.from(".banner-animation", {
-            opacity: 0,
-            y:30,
-            stagger: 0.2
-          })
-    }, [])
+    // useEffect(()=>{
+    //     tl.from(".banner-animation", {
+    //         opacity: 0,
+    //         y:30,
+    //         stagger: 0.2
+    //       })
+    // }, [])
   return (
     <Section className=" bg-center bg-contain" style={{backgroundImage: `linear-gradient(rgba(51, 17, 86, 0.8), rgba(51, 17, 86, 0.8)), url(${bgImg})`}}>
-    
+    <div className="max-w-[1440px] m-auto">
       <Navbar timeline={tl}/>
-      <Container>
+      <Container  className="flex justify-between">
         <Left>
             <div className="text-center md:text-left overflow-hidden"></div>
-          <h1 className="text-3xl md:text-5xl text-white pb-3 banner-animation">Elevate Your Brand: <span className=" span-color-text">Invent</span></h1>
-          <h1 className="text-3xl md:text-5xl text-white pb-3 banner-animation">Transforming Visions into Reality!</h1>
+          <h1 className=" text-center md:text-left text-3xl md:text-5xl text-white md:pb-3 banner-animation">Elevate Your Brand: <span className=" span-color-text">Invent</span></h1>
+          <h1 className="  text-center md:text-left text-3xl md:text-5xl text-white pb-3 banner-animation">Transforming Visions into Reality!</h1>
           {/* <WhatWeDo>
-            <Line src={LineImg} />
+             <Line src={LineImg} />
             <Subtitle>What We Do</Subtitle>
           </WhatWeDo> */}
-          <p className="w-2/3 pt-7 pb-10 text-[0.9rem] md:text-xl banner-animation">
+          <p className="text-center md:text-left w-full md:w-2/3 pt-7 pb-10 text-[0.9rem] md:text-xl banner-animation">
           We take pleasure in crafting delightful, human-centered digital experiences.
           </p>
-          <Button className="banner-animation">Learn More</Button>
+          <Button className="banner-animation text-[1rem] py-3 px-2 md:px-4 md:py-5">Learn More</Button>
         </Left>
         <Right>
         <Canvas>
@@ -167,6 +157,8 @@ function NewHero() {
           <Img src={bgnewImg} />
         </Right>
       </Container>
+    </div>
+      
     </Section>
   );
 }
