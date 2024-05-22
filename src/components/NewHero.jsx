@@ -113,13 +113,13 @@ const Img = styled.img`
 `;
 function NewHero() {
     const tl = gsap.timeline();
-    // useEffect(()=>{
-    //     tl.from(".banner-animation", {
-    //         opacity: 0,
-    //         y:30,
-    //         stagger: 0.2
-    //       })
-    // }, [])
+    useEffect(()=>{
+        tl.from(".banner-animation", {
+            opacity: 0,
+            y:30,
+            stagger: 0.2
+          })
+    }, [])
   return (
     <Section className=" bg-center bg-contain" style={{backgroundImage: `linear-gradient(rgba(51, 17, 86, 0.8), rgba(51, 17, 86, 0.8)), url(${bgImg})`}}>
     <div className="max-w-[1440px] m-auto">

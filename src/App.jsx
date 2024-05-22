@@ -17,6 +17,7 @@ import NewWho from "./components/NewWho";
 import Map from "./components/Map";
 import TestimonialClient from "./components/Testimonial";
 import Navbar from "./components/Navbar";
+import TestimonialClientModel from "./components/Testimonialmodel";
 const Container = styled.div`
   height: 100vh;
   color: white;
@@ -30,16 +31,17 @@ function App() {
   return (
     <Container>
        <NewHero />
-       <NewWorks />
+       <NewWorks />    
        <Portfolio /> 
        <NewWho />
        <OurTeam />
        <HowWeWork />
-       <TestimonialClient />
+       <TestimonialClientModel />
+       {/* <TestimonialClient /> */}
        <Client />
        <ContactVersion1 />
-       <Map />
-       <Footer />  {/* */}
+       <Map /> 
+       <Footer /> 
     </Container>
   );
 }

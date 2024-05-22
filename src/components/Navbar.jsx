@@ -50,13 +50,13 @@ const navItems = [
   {name:  "Contact"}, {name:  "Case Study"}
 ]
 const  Navbar=({timeline})=>{
-  // useEffect(()=>{
-  //   timeline.from(".nav-animation", {
-  //   opacity: 0,
-  //   y:20,
-  //   stagger: 0.2
-  // })
-  // }, [])
+  useEffect(()=>{
+    timeline.from(".nav-animation", {
+    opacity: 0,
+    y:20,
+    stagger: 0.2
+  })
+  }, [])
   
   return (
     <div className='pt-6 overflow-hidden'>

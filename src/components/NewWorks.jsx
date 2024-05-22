@@ -116,7 +116,8 @@ const NewWorks = () => {
     duration: 1.3,
     stagger: 0.2,
   }, "-=1")
-  })
+  
+  } , [])
   
   return (
     <div className="bg-[#080017] px-[4%] service-container">

@@ -41,7 +41,7 @@ export default function ContactVersion1() {
               answer you questions
             </p>
           </div>
-          <div className="pt-5 md:pt-10 flex flex-col gap-4 md:gap-7  md:pl-12">
+          <div className="pt-5 md:pt-10 flex flex-col gap-4 md:gap-7  md:pl-8">
             <div>
               <div className="contact-animation  flex gap-4">
                 <img src={Global} alt="" className="h-5 md:h-9" />
